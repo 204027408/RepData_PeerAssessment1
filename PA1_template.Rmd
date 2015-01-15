@@ -8,7 +8,7 @@ output: html_document
 
 1 & 2. Reading the data from local server, including headers, and ensuring the class of every column to avoid post process.
 ```{r}
-ActivityData<- read.csv("C:/Users/204027408/Desktop/R Programs/Examples/RRAssigment1/RepData_Assignment1/activity.csv", header=TRUE, colClasses= c("numeric", "Date", "numeric"))
+ActivityData<- read.csv("C:/Users/204027408/Desktop/R Programs/Examples/RRAssigment1/RepData_Assessment1/activity.csv", header=TRUE, colClasses= c("numeric", "Date", "numeric"))
 
 ```
 Reviewing the structure and data class.
@@ -186,7 +186,7 @@ xyplot(steps ~ interval | DType, DAPatternAgg2, type = "l", layout = c(1, 2),
 
 ```
 
-
+There are clear differences on the number of steps on weekends and weekdays.
 
 
 
