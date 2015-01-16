@@ -31,7 +31,7 @@ StepsPerDay<- tapply(ActivityData$steps, ActivityData$date, sum)
 hist(StepsPerDay, col="Green", ylab="# Days per Break", breaks=20)
 ```
 
-![Fig1](instructions_fig/Fig1)
+![Fig1](instructions_fig/Fig1.png)
 
 
 I just learned that you can do a similar summary of steps per day with the function aggregate, but it creates a dataframe instead of an array.
