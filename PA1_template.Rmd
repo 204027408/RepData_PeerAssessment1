@@ -6,7 +6,7 @@ output: html_document
 ---
 ## Loading and preprocessing the data
 
-1 and 2. Reading the data from local server, including headers, and ensuring the class of every column to avoid post process.
+1 & 2. Reading the data from local server, including headers, and ensuring the class of every column to avoid post process.
 ```{r}
 ActivityData<- read.csv("C:/Users/204027408/Desktop/R Programs/Examples/RRAssigment1/RepData_Assessment1/activity.csv", header=TRUE, colClasses= c("numeric", "Date", "numeric"))
 
