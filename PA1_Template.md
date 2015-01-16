@@ -31,6 +31,9 @@ StepsPerDay<- tapply(ActivityData$steps, ActivityData$date, sum)
 hist(StepsPerDay, col="Green", ylab="# Days per Break", breaks=20)
 ```
 
+![Fig1](instructions_fig/Fig1)
+
+
 I just learned that you can do a similar summary of steps per day with the function aggregate, but it creates a dataframe instead of an array.
 
 ```{r}
@@ -41,6 +44,7 @@ Now making a histogram of the data frame
 ```{r}
 hist(StepsPerDayAgg$steps, col="Blue", ylab="# Days per Break", breaks=20)
 ```
+![Fig2](instructions_fig/Fig2)
 
 2. Calculating and reporting the mean and median total number of steps taken per day
 
@@ -69,6 +73,9 @@ DAPatternAgg<- aggregate(steps~interval, ActivityData, mean)
 plot(DAPatternAgg, type = "l")
 abline(v=835, col="Blue", lwd=2)
 ```
+![Fig3](instructions_fig/Fig3)
+
+![Fig4](instructions_fig/Fig4)
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 ```{r}
@@ -124,12 +131,15 @@ SPDNoNAs1<- aggregate(steps~date, ActData2, sum)
 hist(SPDNoNAs1$steps, col="Blue", ylab="# Days per Break", breaks=20)
 ```
 
+![Fig5](instructions_fig/Fig5)
+
 Case 2: Using one total mean:
 
 ```{r}
 SPDNoNAs2<- aggregate(steps~date, ActivityData2, sum)
 hist(SPDNoNAs2$steps, col="Green", ylab="# Days per Break", breaks=20)
 ```
+![Fig6](instructions_fig/Fig6)
 
 Plotting Original with Case 1 and Case 2.  
 
@@ -140,6 +150,9 @@ hist(SPDNoNAs1$steps, col="Blue", ylab="# Days per Break", breaks=20)
 hist(SPDNoNAs2$steps, col="Yellow", ylab="# Days per Break", breaks=20)
 ```
 
+![Fig7](instructions_fig/Fig7)
+
+
 Now overlapping them all to see better the differences.
 
 ```{r}
@@ -147,6 +160,10 @@ hist(SPDNoNAs2$steps, main = paste("Comparing With NAs VS W/O NAs"), col="blue",
 hist(StepsPerDayAgg$steps, main = paste("Total Steps Each Day"), col="red", xlab="Number of Steps", add=T, breaks= 20)
 legend("topright", c("W/O NAs", "With NAs"), col=c("blue", "red"), lwd=5)
 ```
+
+![Fig8](instructions_fig/Fig8)
+
+
 
 ```{r}
 MeanADAgg2<- mean(SPDNoNAs2$steps)
@@ -185,6 +202,8 @@ xyplot(steps ~ interval | DType, DAPatternAgg2, type = "l", layout = c(1, 2),
     xlab = "5-minute Interval", ylab = "Number of steps")
 
 ```
+
+![Fig9](instructions_fig/Fig9)
 
 There are clear differences on the number of steps on weekends and weekdays.
 
